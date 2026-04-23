@@ -2,33 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    box-sizing: border-box;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  :root {
-    --background: 222 47% 11%;
-    --foreground: 215 20% 65%;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Scrollbars */
-  ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgb(51 65 85);
-    border-radius: 2px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgb(71 85 105);
-  }
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(51 65 85);
+  border-radius: 2px;
 }
