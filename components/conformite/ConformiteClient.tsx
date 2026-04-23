@@ -59,7 +59,7 @@ export function ConformiteClient({ project, lots, allItems, extractions }: Props
   }
 
   async function handleStatusChange(itemId: string, status: ChecklistStatus) {
-    startTransition(() => updateItemStatus(itemId, status))
+    startTransition(async () => { await updateItemStatus(itemId, status) })
   }
 
   async function handleUpload(itemId: string, file: File, expiresAt?: string) {
