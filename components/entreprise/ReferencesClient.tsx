@@ -33,11 +33,11 @@ export function ReferencesClient({ references, stats }: Props) {
 
   async function handleDelete(id: string) {
     if (!confirm('Supprimer cette référence ?')) return
-    startTransition(() => deleteReference(id))
+    startTransition(async () => { await deleteReference(id) })
   }
 
   async function handleToggleFeatured(id: string, current: boolean) {
-    startTransition(() => toggleReferenceFeatured(id, !current))
+    startTransition(async () => { await toggleReferenceFeatured(id, !current) })
   }
 
   const fmt = (n: number) => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n)

@@ -112,7 +112,7 @@ export function ProjetDetailClient({ project, lots, versions, documents, extract
   }
 
   async function handleStatusChange(newStatus: string) {
-    startTransition(() => updateProjectStatus(project.id, newStatus))
+    startTransition(async () => { await updateProjectStatus(project.id, newStatus) })
   }
 
   const pendingUploads = Object.entries(uploadProgress).filter(([, p]) => p < 100)

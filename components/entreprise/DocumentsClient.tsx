@@ -51,7 +51,7 @@ export function DocumentsClient({ documents, counts, companyId }: Props) {
 
   async function handleDelete(id: string) {
     if (!confirm('Supprimer ce document ?')) return
-    startTransition(() => deleteDocument(id))
+    startTransition(async () => { await deleteDocument(id) })
   }
 
   // Documents manquants suggérés
